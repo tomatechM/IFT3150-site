@@ -13,37 +13,135 @@ title: Vue d'ensemble du projet
 # Vue d'ensemble du projet
 
 !!! info "Informations générales"
-    **Session**: Été 2026  
-    **Auteur(s)**: <!-- Nom de chaque membre (matricule)  -->  
-    **Thème(s)**: <!-- Thèmes principaux abordés dans le projet  -->  
-    **Superviseur(s)**: <!-- Nom du superviseur (affiliation)  -->  
-    **Collaborateur(s):** <!-- Nom de(s) collaborateur(s) et partenaire(s)` -->  
+    **Session**: Automne 2026  
+    **Auteur(s)**: Mohamed Atmani (20218934) <!-- Nom de chaque membre (matricule)  -->  
+    **Thème(s)**: Revue de code de FinScope<!-- Thèmes principaux abordés dans le projet  -->  
+    **Superviseur(s)**: Eugene Syriani<!-- Nom du superviseur (affiliation)  -->  
 
 ## Description du projet
 
-> :bulb: N'oubliez pas d'effacer ou mettre en commentaires les notes (`>`) en début de section
+FinScope est une application Web de gestion des finances personnelles qui a été entièrement développée par "vibe coding" avec l'agent Codex. Le but du projet est de réaliser une revue du code de FinScope et repérer les défaillances fonctionnelles, les vulnérabilités, les défaults de conception, le code inutile ou redondant, les lacunes dans les tests et autres problèmes qui pourraient rendre l'évolution de l'application plus complèxe.
+
+FinScope est une application Web locale de gestion des finances personnelles. Elle permet d'importer des relevés bancaires, de catégoriser les transactions, de gérer des règles de catégorisation, de réviser les marchands inconnus et d'analyser les dépenses et les revenus au fil du temps. L'application a aussi des fonctionnalités liées aux comptes, aux catégories, aux étiquettes, aux remboursements et aux activités récurrentes. Elle supporte l'utilisation en français et en anglais ainsi que différents modes d'affichage.
+
+Le projet FinScope a été développé à l'aide d'une approche de « vibe coding », en utilisant l'agent Codex pour générer le code source, la documentation et les tests. Le code a fait l'objet d'une révision manuelle limitée, donc il est fort probable qu'il y ait des problèmes de qualité, des code smells et d'autres défauts encore présents dans le code.
+
+Dans le cadre de ce projet, l'objectif n'est donc pas de développer de nouvelles fonctionnalités pour FinScope, mais de faire une revue systématique de son code existant et d'évaluer sa qualité, d'identifier les problèmes susceptibles de nuire à sa fiabilité, sa sécurité, sa maintenabilité et son évolution future.
 
 ### Contexte
 
-> Présentez le contexte général dans lequel s’inscrit votre projet (social, organisationnel, technologique, éducatif, environnemental, etc.).
+L'utilisation croissante d'outils d'intelligence artificielle générative transforme de plus en plus les pratiques de développement logiciel. Des agents comme Codex peuvent produire rapidement des applications relativement complètes, générer des tests et créer de la documentation à partir d'instructions en langage naturel. Cette approche permet d'accélérer considérablement le développement, mais elle soulève également des questions concernant la qualité, la cohérence et la maintenabilité du logiciel produit.
+
+Le projet FinScope est un cas d'étude intéressant puisqu'il a été développé entièrement avec du vibe coding. L'application possède déjà une architecture relativement complète, comprenant notamment une couche Web, une gestion de données avec SQLAlchemy, des bases SQLite/MySQL, des traitements en arrière-plan, une interface Web et une suite de tests automatisés. 
+
+Dans ce contexte, une revue de code permet de mettre en évidence les forces et les faiblesses d'un logiciel produit dans ce type de contexte. Elle permet également de mieux comprendre dans quelle mesure les outils de génération de code peuvent produire un système qui respecte les principes de qualité logicielle et les bonnes pratiques de développement.
 
 ### Problématique
 
-> Décrivez le problème central ou la question de recherche que votre projet cherche à adresser, pourquoi s'y intéresser et les faiblesses des solutions actuelles. 
-> Le problème doit pouvoir être compris indépendamment de la solution envisagée.
+Le développement assisté par des agents d'intelligence artificielle permet de produire rapidement une grande quantité de code, mais la rapidité de génération ne garantit pas nécessairement sa qualité. Du code généré automatiquement peut contenir des erreurs fonctionnelles, des vulnérabilités, des duplications, des choix architecturaux discutables, des dépendances inutiles ou encore des tests insuffisants.
+
+Dans le cas de FinScope, ces problèmes sont particulièrement importants puisque l'application manipule des données financières personnelles. Une erreur fonctionnelle ou une faiblesse de sécurité pourrait donc avoir des conséquences importantes pour les utilisateurs.
+
+La problématique centrale du projet est donc la suivante :
+
+> **Dans quelle mesure le code généré par une approche de « vibe coding » pour FinScope respecte-t-il les principes de qualité logicielle, et quels problèmes pourraient compromettre sa fiabilité, sa sécurité, sa maintenabilité ou son évolutivité?**
+
+Cette problématique sera abordée indépendamment de l'hypothèse selon laquelle l'utilisation de l'IA produit nécessairement du mauvais code. L'objectif est plutôt d'obtenir une évaluation objective du système à partir d'analyses et de critères reproductibles.
 
 ### Proposition et objectifs
 
-> Présentez votre proposition de projet et les objectifs visés. Expliquez en quoi votre approche répond à la problématique identifiée. 
-> Assurez-vous d'avoir, dans la mesure du possible, des objectifs mesurables, raisonnnables dans le temps et non redondants entre eux.
+Le projet propose de réaliser une revue de code structurée et systématique de FinScope. L'analyse combinera différentes techniques afin de couvrir à la fois les aspects statiques, dynamiques, fonctionnels et architecturaux de l'application.
+
+Les principaux objectifs sont les suivants :
+
+* Évaluer la qualité générale du code en identifiant les mauvaises pratiques, les code smells, les duplications, la complexité excessive et les problèmes de maintenabilité.
+* Identifier les vulnérabilités et problèmes de sécurité, particulièrement ceux qui concernent l'authentification, l'autorisation, la gestion des entrées utilisateur, les données financières, les secrets, les accès à la base de données et les communications avec des services externes.
+* Évaluer la robustesse fonctionnelle de l'application en recherchant des comportements incorrects, des cas limites non traités et des incohérences entre les fonctionnalités attendues et leur implémentation.
+* Analyser l'architecture et la conception du logiciel afin d'identifier les responsabilités mal réparties, le couplage excessif, les dépendances problématiques et les violations potentielles des principes de conception.
+* Évaluer la qualité et la couverture des tests en vérifiant si les fonctionnalités importantes et les scénarios critiques sont suffisamment testés.
+* Identifier le code inutile, redondant ou difficilement justifiable, afin de déterminer les possibilités de simplification et de réduction de la dette technique.
+* Produire un rapport de revue de code reproductible, regroupant les problèmes observés, leur gravité, leurs conséquences potentielles et, lorsque pertinent, des recommandations de correction.
 
 ### Méthodologie
 
-> Expliquez comment vous comptez aborder le projet : démarche générale, grandes étapes prévues, itérations, types de validations envisagées.
+La revue sera réalisée progressivement afin de combiner plusieurs sources d'information et d'éviter de dépendre d'une seule technique d'analyse.
+
+#### Compréhension du système
+- Une première étape consistera à étudier la structure générale de FinScope, sa documentation, son architecture et ses principales fonctionnalités. Le dépôt contient notamment les répertoires src/finance_app, tests et docs, ainsi que la configuration nécessaire aux outils de développement et d'intégration continue
+- Cette étape permettra d'établir une compréhension de référence du système avant d'évaluer individuellement ses composants.
+
+#### Analyse statique
+- Des outils d'analyse statique seront utilisés pour rechercher automatiquement différents types de problèmes :
+
+    1. complexité excessive
+    2. duplication de code
+    3. erreurs potentielles
+    4. mauvaises pratiques
+    5. problème de typage
+    6. problème de style
+    7. dépendances problématiques
+    8. vulnérabilités connues
+    9. code mort
+
+Les résultats automatiques seront ensuite examinés manuellement afin de distinguer les véritables problèmes des faux positifs.
+
+#### Revue manuelle du code
+Une revue manuelle sera réalisée sur les parties importantes de l'application afin d'identifier les problèmes qui ne peuvent pas être détectés correctement par des outils automatisés.
+
+#### Analyse des tests
+La suite de tests existante sera analysée afin d'évaluer :
+
+- les fonctionnalités couvertes
+- les fonctionnalités insuffisamment couvertes
+- la présence de tests unitaires et d'intégration
+- la qualité des assertions
+- les cas limites
+- les scénarios d'erreur
+- la facilité d'exécution et de maintenance des tests
+
+Le dépôt utilise actuellement pytest et fournit une configuration dédiée à l'exécution de la suite de tests
+
+#### Tests dynamiques et scénarios d'utilisation
+L'application sera exécutée afin de vérifier son comportement réel dans différents scénarios. Des cas normaux, des cas limites et des entrées invalides seront utilisés pour essayer de provoquer des comportements inattendus.
+
+Cette étape va permettre de comparer le comportement observé avec celui attendu à partir de la documentation et des fonctionnalités annoncées.
+
+#### Classification et priorisation des problèmes
+Chaque problème identifié sera documenté et classifié selon sa nature, par exemple :
+
+- défaut fonctionnel
+- vulnérabilité de sécurité
+- problème de conception
+- problème de maintenabilité
+- duplication ou redondance
+- problème de test
+- problème de performance
+- problème de documentation
+
+Les problèmes vont être ensuite priorisés selon leur gravité, et leur facilité de correction
+
+#### Synthèse
+
+Les résultats des différentes analyses seront regroupés afin de produire une vue d'ensemble de la qualité du projet. Cette synthèse permettra notamment de déterminer les catégories de problèmes les plus fréquentes et les zones du code présentant le plus de risques.
 
 ### Validation et Évaluation
 
-> Indiquez comment vous évaluerez que votre solution répond aux objectifs du projet (ex. scénarios d’usage, tests, retours utilisateurs, indicateurs qualitatifs ou quantitatifs).
+La qualité de la revue sera évaluée à partir de plusieurs indicateurs quantitatifs et qualitatifs.
+
+Les principaux indicateurs envisagés sont :
+
+- nombre total de problèmes identifiés
+- nombre de problèmes par catégorie
+- nombre de problèmes selon leur niveau de gravité
+- nombre de vulnérabilités détectées
+- niveau de couverture des tests
+- nombre de tests réussis et échoués
+- nombre de duplications ou de problèmes de complexité détectés
+- proportion des problèmes confirmés manuellement parmi ceux détectés automatiquement
+- nombre de fonctionnalités critiques couvertes correctement par les tests
+- reproductibilité des problèmes identifiés
+
+Les résultats des outils automatisés seront comparés à ceux de la revue manuelle. Pour les problèmes importants, des scénarios de reproduction seront documentés pour qu'un autre développeur puisse confirmer le problème.
 
 ## Échéancier
 
