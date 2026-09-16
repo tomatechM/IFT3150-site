@@ -200,13 +200,4 @@ Les principaux indicateurs vont être :
 
 (Maybe) Les résultats des outils automatisés seront comparés à ceux de la revue manuelle. Pour les problèmes importants, des scénarios de reproduction seront documentés pour qu'un autre développeur puisse confirmer le problème.
 
-## Échéancier
 
-!!! info
-    Le suivi complet est disponible dans la page [Suivi de projet](suivi.md).
-
-| Activités                      | Début   |   Fin   | Livrable                            | Statut      |
-|--------------------------------|---------|---------|-------------------------------------|-------------|
-| Ouverture de projet            | 4 mai   | 15 mai  | Proposition de projet               | ✅ Terminé  |
-| Études préliminaires           | 4 mai   | 22 mai  | Document d'analyse                  | 🔄 En cours |
-| Présentation + Rapport         | 7 aout  | 14 aout | Présentation + Rapport              | ⏳ À venir  |
