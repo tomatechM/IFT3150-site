@@ -37,6 +37,7 @@ title: Suivi du projet
 ### Décisions et ajustements
 
 - Les résultats des outils automatisés seront vérifiés manuellement avant d'être considérés comme des problèmes confirmés.
+- Après la lecture de la documentation, je me suis aperçu qu'il y a déjà des analyses statiques effectuées avec des outils tels que Ruff et Mypy. Donc la section de l'analyse statique énoncé dans la vue d'ensemble sera mise de côté pour d'autres sections plus importantes.
 
 
 ### Difficultés rencontrées
