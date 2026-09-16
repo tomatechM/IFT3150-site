@@ -42,7 +42,7 @@ Dans le cas de FinScope, ces problèmes sont particulièrement importants puisqu
 
 La problématique centrale du projet est donc la suivante :
 
-> **À quel point est-ce que le code généré par une approche de « vibe coding » pour FinScope respecte-t-il les principes de qualité logicielle, et quels problèmes pourraient compromettre sa fiabilité, sa sécurité, sa maintenabilité ou son évolutivité?**
+> **Dans quelle mesure le code produit dans le cadre du développement de FinScope à l'aide d'un agent de génération de code respecte-t-il différents critères de qualité logicielle, et quels problèmes peuvent être identifiés par une combinaison d'analyses automatisées, de revue manuelle et de tests?**
 
 ### Proposition et objectifs
 
@@ -56,11 +56,14 @@ Les principaux objectifs sont les suivants :
 * Analyser l'architecture et la conception du logiciel afin d'identifier les responsabilités mal réparties, le couplage excessif, les dépendances problématiques et les violations potentielles des principes de conception.
 * Évaluer la qualité et la couverture des tests en vérifiant si les fonctionnalités importantes et les scénarios critiques sont suffisamment bien testés.
 * Identifier le code inutile, redondant ou difficilement justifiable, afin de déterminer les possibilités de simplification et de réduction de la dette technique.
+* Examiner la cohérence entre la documentation du projet et son fonctionnement réel.
 * Produire un rapport de revue de code reproductible, regroupant les problèmes observés, leur gravité, leurs conséquences potentielles et, lorsque pertinent, des recommandations de correction.
 
 ### Méthodologie
 
 La revue sera réalisée progressivement afin de combiner plusieurs sources d'information et d'éviter de dépendre d'une seule technique d'analyse.
+
+La méthodologie sera organisée autour de cinq dimensions principales : compréhension du système, qualité du code et de la conception, sécurité, robustesse fonctionnelle et qualité des tests.
 
 #### Compréhension du système
 - Une première étape consistera à étudier la structure générale de FinScope, sa documentation, son architecture et ses principales fonctionnalités. Le dépôt contient notamment les répertoires src/finance_app, tests et docs, ainsi que la configuration nécessaire aux outils de développement et d'intégration continue
@@ -79,10 +82,44 @@ La revue sera réalisée progressivement afin de combiner plusieurs sources d'in
     8. vulnérabilités connues
     9. code mort
 
-Les résultats automatiques seront ensuite examinés manuellement afin de distinguer les véritables problèmes des faux positifs.
+Les résultats des outils automatisés ne seront pas considérés automatiquement comme des problèmes confirmés. Ils seront plutôt des résultats candidats qui devront être vérifiés manuellement.
 
 #### Revue manuelle du code
 Une revue manuelle sera réalisée sur les parties importantes de l'application afin d'identifier les problèmes qui ne peuvent pas être détectés correctement par des outils automatisés.
+
+La revue manuelle portera sur :
+
+* la conception et l'architecture;
+* la séparation des responsabilités;
+* la lisibilité;
+* la complexité;
+* la logique métier;
+* la gestion des erreurs;
+* la maintenabilité;
+* les dépendances entre composants;
+* les problèmes potentiels de sécurité;
+* la cohérence entre le code et la documentation.
+
+### Analyse de la sécurité
+
+La sécurité sera une dimension particulière de la revue en raison de la nature des données manipulées par FinScope.
+
+L'analyse portera sur :
+
+* l'authentification;
+* l'autorisation;
+* la gestion des sessions;
+* la validation des entrées;
+* les interactions avec la base de données;
+* les risques d'injection;
+* la gestion des fichiers importés;
+* la gestion des secrets;
+* la gestion des erreurs;
+* la protection des données sensibles;
+* les dépendances externes;
+* les communications avec des services externes.
+
+L'analyse s'appuiera sur les recommandations d'OWASP concernant la revue manuelle de code sécurisé. OWASP recommande d'examiner l'architecture, les points d'entrée, la validation des données, l'authentification, l'autorisation, les flux de données, la logique métier, la gestion des erreurs et la configuration.
 
 #### Analyse des tests
 La suite de tests existante sera analysée afin d'évaluer :
@@ -99,6 +136,19 @@ La suite de tests existante sera analysée afin d'évaluer :
 #### Tests dynamiques et scénarios d'utilisation
 L'application sera exécutée afin de vérifier son comportement réel dans différents scénarios. Des cas normaux, des cas limites et des entrées invalides seront utilisés pour essayer de provoquer des comportements inattendus.
 
+Les scénarios seront porter sur :
+
+* l'importation de relevés;
+* la catégorisation des transactions;
+* la modification des catégories;
+* la gestion des règles;
+* la gestion des comptes;
+* les opérations sur les transactions;
+* les fonctionnalités liées aux remboursements;
+* les fonctionnalités récurrentes;
+* les erreurs de saisie;
+* les interactions avec la base de données.
+
 Cette étape va permettre de comparer le comportement observé avec celui attendu à partir de la documentation et des fonctionnalités annoncées.
 
 #### Classification et priorisation des problèmes
@@ -113,6 +163,14 @@ Chaque problème identifié sera documenté et classifié selon sa nature, par e
 - problème de performance
 - problème de documentation
 
+Une distinction sera également faite entre :
+
+* problème détecté automatiquement;
+* problème détecté manuellement;
+* problème détecté par un test dynamique;
+* problème confirmé après vérification;
+* faux positif.
+
 Les problèmes vont être ensuite priorisés selon leur gravité et leur facilité de correction
 
 #### Synthèse
@@ -125,16 +183,20 @@ La qualité de la revue sera évaluée à partir de plusieurs indicateurs quanti
 
 Les principaux indicateurs vont être :
 
-- nombre total de problèmes identifiés
-- nombre de problèmes par catégorie
-- nombre de problèmes selon leur niveau de gravité
-- nombre de vulnérabilités détectées
-- niveau de couverture des tests
-- nombre de tests réussis et échoués
-- nombre de duplications ou de problèmes de complexité détectés
-- proportion des problèmes confirmés manuellement parmi ceux détectés automatiquement
-- nombre de fonctionnalités critiques couvertes correctement par les tests
-- reproductibilité des problèmes identifiés
+* nombre total de problèmes identifiés;
+* nombre de problèmes par catégorie;
+* nombre de problèmes par composant;
+* nombre de problèmes selon leur niveau de gravité;
+* nombre de vulnérabilités détectées;
+* couverture des tests;
+* nombre de tests réussis et échoués;
+* nombre de duplications détectées;
+* nombre de problèmes de complexité;
+* nombre de problèmes détectés par chaque outil;
+* proportion des problèmes automatisés confirmés manuellement;
+* nombre de faux positifs;
+* nombre de fonctionnalités critiques correctement couvertes par les tests;
+* reproductibilité des problèmes identifiés.
 
 (Maybe) Les résultats des outils automatisés seront comparés à ceux de la revue manuelle. Pour les problèmes importants, des scénarios de reproduction seront documentés pour qu'un autre développeur puisse confirmer le problème.
 

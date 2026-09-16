@@ -30,9 +30,14 @@ title: Suivi du projet
     - [x] Étudier plus au sujet du code review
     - [x] Compléter une vue d'ensemble initiale du projet
     - [x] Tester l'application en tant qu'utilisateur
+    - [ ] Lire la documentation du projet
+
 
 
 ### Décisions et ajustements
+
+- Les résultats des outils automatisés seront vérifiés manuellement avant d'être considérés comme des problèmes confirmés.
+
 
 ### Difficultés rencontrées
 
