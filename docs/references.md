@@ -89,12 +89,18 @@ title: Travail réalisé
 
 ### Articles scientifiques sur la revue de code
 
+#### George David Apostolidis - Evaluation of Python code quality using multiple source code analyzers
+
+>George David Apostolidis. Evaluation of Python code quality using multiple source code analyzers. 2023. ResearchGate.
+
+Cette thèse a servi à mieux comprendre les différents outils d'analyse de revue de code pour Python. Cela a permis de déterminer les outils qui seront utiles à la revue de code de FinScope.
+
 #### Bacchelli et Bird — Expectations, Outcomes, and Challenges of Modern Code Review
 
 > Bacchelli, A. et Bird, C. Expectations, Outcomes, and Challenges of Modern Code Review. Proceedings of the International Conference on Software Engineering (ICSE), 2013. IEEE.
 Microsoft Research
 
-Cet article a servi à mieux comprendre le rôle de la revue de code moderne. Les auteurs montrent que, bien que la détection de défauts constitue une motivation importante, les revues de code apportent également d'autres bénéfices, notamment le transfert de connaissances et l'amélioration de la compréhension du code. Cette étude a contribué à orienter le projet vers une revue qui ne se limite pas à la recherche de bugs, mais qui examine également la conception, la maintenabilité et la compréhension du logiciel.
+Cet article a servi à mieux comprendre le rôle de la revue de code moderne. Les auteurs montrent que, bien que la détection de défauts constitue une motivation importante, les revues de code amènent aussi d'autres bénéfices, comme le transfert de connaissances et l'amélioration de la compréhension du code. Cette étude a contribué à orienter le projet vers une revue qui ne se limite pas à la recherche de bugs, mais qui examine également la conception, la maintenabilité et la compréhension du logiciel.
 
 #### Mäntylä et Lassenius — What Types of Defects Are Really Discovered in Code Reviews?
 
