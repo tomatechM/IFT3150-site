@@ -70,7 +70,7 @@ La méthodologie sera organisée autour de cinq dimensions principales : compré
 - Cette étape permettra d'établir une compréhension de référence du système avant d'évaluer individuellement ses composants.
 
 #### Analyse statique
-- Des outils d'analyse statique comme Ruff, Mypy et Bandit seront utilisés pour rechercher automatiquement différents types de problèmes :
+- Malgré le fait qu'il sont déjà utilisés dans les tests, les outils d'analyse statiques seront utilisés pour rechercher automatiquement différents types de problèmes :
 
     1. complexité excessive
     2. duplication de code
