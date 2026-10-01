@@ -46,3 +46,31 @@ title: Suivi du projet
     - Problème de l'éxecution de l'application
         - Dans le README, il est indiqué que, pour lancer l'application FinScope, il suffit d'installer les dépendances dans `requirements.txt` mais ce n'est pas le cas.
         - Résolu après installé les dépendances dans `requirements-dev.txt` du côté développeur.
+
+## Semaine 3-4 (20 septembre - 3 octobre)
+
+### Objectifs de la période
+- Éxécuter les tests implémentés et étudier la couverture des tests
+- Finir la lecture de la documentation
+- Commencer l'analyse de l'architecture du code
+
+### Travail réalisé
+
+!!! abstract "Avancement"
+    - [x] Éxécution des tests implémentés et étude de la couverture des tests
+        - 1365 tests passés avec une couverture de tests de 93%
+    - [x] Finir la lecture de la documentation
+    - [x] Commencer l'analyse de l'architecture du code
+        - La première analyse a été réalisé pour le module /transactions, un module important qui comporte 10 fichiers de code.
+        - L'analyse s'est basé sur 3 points :
+            - La lisibilité du code (la qualité des commentaires)
+            - Le code respecte-t-il les règles d'architecture de la documentation AGENTS.md ?
+            - Le code respecte-t-il les normes de qualité logiciel (faible couplage et forte cohésion)
+
+### Décisions et ajustements
+
+!!! info "Décisions"
+    - Suite à la première analyse, il y aura un changement sur le plan de l'analyse. 
+    -  Plus précisemment, au lieu de regrouper les problèmes observés et en recommander des corrections :
+        - Développer une généralisation des problèmes qui se répètent à plusieurs reprises partout dans le code. Cela permettra de déterminer les points faibles et les mauvaises pratiques à prendre en compte lors de l'utilisation d'un agent IA
+        - Ensuite, de ces généralisations, déterminer des solutions applicables pour chaque cas.
