@@ -87,6 +87,27 @@ title: Travail réalisé
 
 ## Références
 
+### Articles scientifiques sur le code développé par un agent IA
+
+#### Yue, Nikolaos, Peter - AI-Generated Smells: An Analysis of Code and Architecture in LLM-and Agent-Driven Development
+
+>https://arxiv.org/html/2605.02741
+
+Cet article a servi à mieux comprendre les problèmes de qualité structurelle et architecturale pouvant apparaître dans du code généré par des LLM et des agents autonomes. Les auteurs se concentrent sur les code smells, sur la complexité et au couplage du code généré. Leur étude montre que le fait qu'un logiciel soit fonctionnel ne garantit pas sa qualité structurelle ou sa maintenabilité.
+
+#### Alfred, Marcia, Glaucia, Fabio, Wesley - Is LLM-Generated Code More Maintainable & Reliable than Human-Written Code?
+
+> https://arxiv.org/abs/2508.00700
+
+Cet article a servi à mieux comprendre comment évaluer et comparer la qualité du code généré par des LLM. Les auteurs étudient des caractéristiques telles que la maintenabilité et la fiabilité, en utilisant SonarQube pour analyser différents ensembles de code généré par des LLM et du code écrit par des humains. Leur étude montre le fait que les résultats peuvent varier selon la compléxité des tâches et que du code généré peut avoir des problèmes structurels.
+
+
+#### Yuntong,  Zhiyuan, Imam, Haifeng, Ridwan, Abhik - Code Review Agent Benchmark
+
+> https://arxiv.org/abs/2603.23448
+
+Cet article a servi à mieux comprendre les limites des agents d'IA dans la revue de code. Les auteurs proposent le jeu de données c-CRAB pour évaluer la capacité d'agents de revue de code à identifier des problèmes dans des pull requests. Ce qu'ils remarquent c'est que les systèmes de code review automatiques résoudent une fraction des problèmes identifiés dans le benchmark. Ce résultat relève de la limitation d'un système de code review automatique courant.   
+
 ### Articles scientifiques sur la revue de code
 
 #### George David Apostolidis - Evaluation of Python code quality using multiple source code analyzers
@@ -142,6 +163,12 @@ Cette ressource est utilisée pour structurer l'analyse de sécurité de FinScop
 > OpenAI — Codex
 
 #### Outils d'analyse
+
+Code Quality Analyser (PyExamine) 
+
+> https://github.com/KarthikShivasankar/python_smells_detector
+
+PyExamine est utilisé pour 
 
 Ruff
 
