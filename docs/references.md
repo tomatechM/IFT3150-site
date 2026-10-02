@@ -168,7 +168,7 @@ Code Quality Analyser (PyExamine)
 
 > https://github.com/KarthikShivasankar/python_smells_detector
 
-PyExamine est utilisé pour 
+PyExamine est utilisé pour analyser statiquement le code Python de FinScope et détecter différents types de problèmes de qualité. L'outil cherche des code smells, des architectural smells et des structural smells.
 
 Ruff
 
